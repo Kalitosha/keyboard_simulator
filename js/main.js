@@ -10,53 +10,51 @@ let letterId = 1; // очередной символ, на кот польсоз
 init();
 
 
-function init() {  
-	updateDisplayedLines();
+function init() {
+  updateDisplayedLines();
 
-	inputTextEl.focus();
+  inputTextEl.focus();
 
-	inputTextEl.addEventListener("keydown", function (event) {
-		// console.log(event)
-		const currentLineNumber = getCurrentLineNumber();
-		const currentLetter = getCurrentLetter();
+  inputTextEl.addEventListener("keydown", function (event) {
+    // console.log(event)
+    const currentLineNumber = getCurrentLineNumber();
+    const currentLetter = getCurrentLetter();
 
-		if(event.key.startsWith('F') && event.key.length > 1){
-			return;
-		}
+    if (event.key.startsWith('F') && event.key.length > 1) {
+      return;
+    }
 
-		const isKey = (event.key === currentLetter.original);
-		const isEnter = (event.key === 'Enter' && currentLetter.original === '\n');
-		if (isKey || isEnter) {
-			letterId++;
-			updateDisplayedLines();
-		}	
-		else{
-			event.preventDefault(); // запрет на стандартную обработку события
-		}
+    const isKey = (event.key === currentLetter.original);
+    const isEnter = (event.key === 'Enter' && currentLetter.original === '\n');
+    if (isKey || isEnter) {
+      letterId++;
+      updateDisplayedLines();
+    }
+    else {
+      event.preventDefault(); // запрет на стандартную обработку события
+    }
 
-		colorize(event, true);
+    colorize(event, true);
 
-		if(currentLineNumber !== getCurrentLineNumber()){
-			inputTextEl.value = '';
-			event.preventDefault(); // нужен для того, чтобы последний символ тоже стереть
-		}
-	});
-	
-	inputTextEl.addEventListener("keyup", function (event) {
-		colorize(event, false);
-	});
-	
-	function colorize(event, need){
-		const element = document.querySelector('[data-key="' + event.code + '"]');
-		if (element){
-			(need)? element.classList.add('hint') : element.classList.remove('hint')
-		}		
-		// if (event.key == 'Tab') element.classList.remove('hint') // TODO ////////////////
-	}
+    if (currentLineNumber !== getCurrentLineNumber()) {
+      inputTextEl.value = '';
+      event.preventDefault(); // нужен для того, чтобы последний символ тоже стереть
+    }
+  });
+
+  inputTextEl.addEventListener("keyup", function (event) {
+    colorize(event, false);
+  });
+
+  function colorize(event, need) {
+    const element = document.querySelector('[data-key="' + event.code + '"]');
+    if (element) {
+      (need) ? element.classList.add('hint') : element.classList.remove('hint')
+    }
+    // if (event.key == 'Tab') element.classList.remove('hint') // TODO ////////////////
+  }
 
 }
-
-
 
 function getLines(text) {
   const lines = [];
@@ -64,21 +62,21 @@ function getLines(text) {
   let idCounter = 0;
 
   for (const originalLetter of text) {
-		idCounter++;
-		let letter = originalLetter;
+    idCounter++;
+    let letter = originalLetter;
 
-		if(letter === ' '){
-			letter = '°';
-		}
+    if (letter === ' ') {
+      letter = '°';
+    }
 
-		if(letter === '\n'){
-			letter = '¶\n';
-		}
+    if (letter === '\n') {
+      letter = '¶\n';
+    }
 
     line.push({
       id: idCounter,
-			label: letter,
-			original: originalLetter,
+      label: letter,
+      original: originalLetter,
       state: true,
     });
 
