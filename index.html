@@ -1,165 +1,153 @@
 <!DOCTYPE html>
 <html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Клавиатурный тренажер</title>
+		<!-- <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"> -->
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=cyrillic-ext" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- Logo and Results -->
+		<div class="container">
+			<div class="logo"><i class="fas fa-keyboard"></i> Клавиатурный тренажер</div>
 
-<head>
-	<meta charset="UTF-8">
-	<title>Клавиатурный тренажер</title>
-	<!-- <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
-	<link href="https://fonts.googleapis.com/css?family=PT+Mono&display=swap&subset=cyrillic-ext" rel="stylesheet">
-
-</head>
-<body>
-	
-	<!-- Logo and Results -->
-	<div class="container">
-		<div class="logo">
-			<i class="fas fa-keyboard"></i> Клавиатурный тренажер
-		</div>
-		
-		<!-- Results -->
-		<div class="results ">
-			<div class="results-title">Результаты предыдущей строки:</div>
-			<div class="indicators">
-				<div class="indicator">
-					<div class="indicator__icon">
-						<i class="fas fa-tachometer-alt"></i>
+			<!-- Results -->
+			<div class="results">
+				<div class="results-title">Результаты предыдущей строки:</div>
+				<div class="indicators">
+					<div class="indicator">
+						<div class="indicator__icon">
+							<i class="fas fa-tachometer-alt"></i>
+						</div>
+						<div class="indicator__name">Символов в минуту:</div>
+						<div class="indicator__value">266</div>
 					</div>
-					<div class="indicator__name">Символов в минуту:</div>
-					<div class="indicator__value">266</div>
-				</div>
-				<div class="indicator">
-					<div class="indicator__icon indicator__icon--errors">
-						<i class="fas fa-exclamation-circle"></i>
+					<div class="indicator">
+						<div class="indicator__icon indicator__icon--errors">
+							<i class="fas fa-exclamation-circle"></i>
+						</div>
+						<div class="indicator__name">Ошибок:</div>
+						<div class="indicator__value">1.41%</div>
 					</div>
-					<div class="indicator__name">Ошибок:</div>
-					<div class="indicator__value">1.41%</div>
 				</div>
 			</div>
+			<!-- // Results -->
 		</div>
-		<!-- // Results -->
+		<!-- // Logo and Results -->
 
-	</div>
-	<!-- // Logo and Results -->
+		<div class="devider"></div>
 
-	<div class="devider"></div>
+		<div class="container">
+			<!-- Input field -->
+			<form action="">
+				<input id="inputText" type="text" class="input" placeholder="Поле для ввода текста" value="" />
+			</form>
+			<!-- // Input field -->
 
-	<div class="container">
-
-		<!-- Input field -->
-		<form action="">
-			<input 
-        id="inputText"
-        type="text" 
-        class="input " 
-        placeholder="Поле для ввода текста" 
-        value=""
-			>
-		</form>
-		<!-- // Input field -->
-
-		<!-- Text -->
-		<!-- <div class="text error"> -->
-		<div class="text" id="textExample">
-			<div class="line">
-				<span class="done"> На переднем плане, прямо перед</span> 
-				<span class="hint">н</span>ами, расположен был дворик, где стоял
+			<!-- Text -->
+			<!-- <div class="text error"> -->
+			<div class="text" id="textExample">
+				<div class="line">
+					<span class="done"> На переднем плане, прямо перед</span>
+					<span class="hint">н</span>ами, расположен был дворик, где стоял
+				</div>
+				<div class="line">
+					наполовину вычищенный автомобиль. Шофер Остин был на этот раз
+				</div>
+				<div class="line">
+					уволен окончательно и бесповоротно. Он раскинулся на земле,
+				</div>
+				<div class="line hidden">
+					и большая черная ссадина на лбу свидетельствовала, по-видимому, о том,
+				</div>
+				<div class="line hidden">что он при падении ударился головою о подножку или щит.</div>
 			</div>
-			<div class="line">
-				наполовину вычищенный автомобиль. Шофер Остин был на этот раз
+			<!-- // Text  -->
+
+			<!-- Keyboard -->
+			<div class="keyboard">
+				<div class="line">
+					<div data-key="Backquote">Ё</div>
+					<div data-key="Digit1">1</div>
+					<div data-key="Digit2">2</div>
+					<div data-key="Digit3">3</div>
+					<div data-key="Digit4">4</div>
+					<div data-key="Digit5">5</div>
+					<div data-key="Digit6">6</div>
+					<div data-key="Digit7">7</div>
+					<div data-key="Digit8">8</div>
+					<div data-key="Digit9">9</div>
+					<div data-key="Digit0">0</div>
+					<div data-key="Minus">-</div>
+					<div data-key="Equal">+</div>
+					<div class="backspace" data-key="Backspace">Backspace</div>
+				</div>
+				<div class="line">
+					<div class="tab" data-key="Tab">Tab</div>
+          <div data-key="KeyQ">Й</div>
+          <div data-key="KeyW">Ц</div>
+          <div data-key="KeyE">У</div>
+          <div data-key="KeyR">К</div>
+          <div data-key="KeyT">Е</div>
+          <div data-key="KeyY">Н</div>
+          <div data-key="KeyU">Г</div>
+          <div data-key="KeyI">Ш</div>
+          <div data-key="KeyO">Щ</div>
+          <div data-key="KeyP">З</div>
+          <div data-key="BracketLeft">Х</div>
+          <div data-key="BracketRight">Ъ</div>
+					<div data-key="Backslash">\</div>
+				</div>
+				<div class="line">
+					<div class="caps" data-key="CapsLock">Caps Lock</div>
+					<div data-key="KeyA">Ф</div>
+					<div data-key="KeyS">Ы</div>
+					<div data-key="KeyD">В</div>
+					<div data-key="KeyF">А</div>
+					<div data-key="KeyG">П</div>
+					<div data-key="KeyH">Р</div>
+					<div data-key="KeyJ">О</div>
+					<div data-key="KeyK">Л</div>
+					<div data-key="KeyL">Д</div>
+					<div data-key="Semicolon">Ж</div>
+					<div data-key="Quote">Э</div>
+					<div class="enter" data-key="Enter">Enter</div>
+				</div>
+				<div class="line">
+					<div class="shift" data-key="ShiftLeft">Shift</div>
+					<div data-key="KeyZ">Я</div>
+					<div data-key="KeyX">Ч</div>
+					<div data-key="KeyC">С</div>
+					<div data-key="KeyV">М</div>
+					<div data-key="KeyB">И</div>
+					<div data-key="KeyN">Т</div>
+					<div data-key="KeyM">Ь</div>
+					<div data-key="Comma">Б</div>
+					<div data-key="Period">Ю</div>
+					<div data-key="Slash">. <sup>,</sup></div>
+					<div class="alt" data-key="AltLeft">Alt</div>
+				</div>
+				<div class="line">
+					<div class="space" data-key="Space"></div>
+				</div>
 			</div>
-			<div class="line">
-				уволен окончательно и бесповоротно. Он раскинулся на земле,
-			</div>
-			<div class="line hidden">
-				и большая черная ссадина на лбу свидетельствовала, по-видимому, о том,
-			</div>
-			<div class="line hidden"> что он при падении ударился головою о подножку или щит.</div>
+			<!-- // Keyboard -->
 		</div>
-		<!-- // Text  -->
-		
-		<!-- Keyboard -->
-		<div class="keyboard">
-			<div class="line">
-				<div>Ё</div>
-				<div>1</div>
-				<div>2</div>
-				<div>3</div>
-				<div>4</div>
-				<div>5</div>
-				<div>6</div>
-				<div>7</div>
-				<div>8</div>
-				<div>9</div>
-				<div>0</div>
-				<div>-</div>
-				<div>+</div>
-				<div class="backspace">Backspace</div>
+
+		<div class="devider"></div>
+		<div class="container">
+			<!-- Copyright -->
+			<div class="copyright">
+				<p>
+					Проект сделал [Ваше имя] [Ваша фамилия] в рамках интенсива по JS в
+					<a href="https://vk.com/webcademy" target="_blank">WebCademy.ru</a>
+				</p>
 			</div>
-			<div class="line">
-				<div class="tab">Tab</div>
-				<div>Й</div>
-				<div>Ц</div>
-				<div>У</div>
-				<div>К</div>
-				<div>Е</div>
-				<div class="hint">Н</div>
-				<div>Г</div>
-				<div>Ш</div>
-				<div>Щ</div>
-				<div>З</div>
-				<div>Х</div>
-				<div>Ъ</div>
-				<div>\</div>
-			</div>
-			<div class="line">
-				<div class="caps">Caps Lock</div>
-				<div>Ф</div>
-				<div>Ы</div>
-				<div>В</div>
-				<div>А</div>
-				<div>П</div>
-				<div>Р</div>
-				<div>О</div>
-				<div>Л</div>
-				<div>Д</div>
-				<div>Ж</div>
-				<div>Э</div>
-				<div class="enter">Enter</div>
-			</div>
-			<div class="line">
-				<div class="shift">Shift</div>
-				<div>Я</div>
-				<div>Ч</div>
-				<div>С</div>
-				<div>М</div>
-				<div>И</div>
-				<div>Т</div>
-				<div>Ь</div>
-				<div>Б</div>
-				<div>Ю</div>
-				<div>. <sup>,</sup></div>
-				<div class="shift">Shift</div>
-			</div>
-			<div class="line">
-				<div class="space"></div>
-				<div class="alt">Alt</div>
-			</div>
+			<!-- // Copyright -->
 		</div>
-		<!-- // Keyboard -->
-	</div>
 
-	<div class="devider"></div>
-	<div class="container">
-		<!-- Copyright -->
-		<div class="copyright">
-			<p>Проект сделал [Ваше имя] [Ваша фамилия] в  рамках интенсива по JS в <a href="https://vk.com/webcademy" target="_blank">WebCademy.ru</a></p>
-		</div>
-		<!-- // Copyright -->
-	</div>
-
-	<script src="js/main.js"></script>
-</body>
-
+		<script src="js/main.js"></script>
+	</body>
 </html>
